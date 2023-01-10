@@ -42,8 +42,24 @@ const post =(req, res)=>{
     res.status(201);//created
     res.send('Created');
 };
+
+const remove = (req,res)=>{
+const id =+req.params.id;
+for(let i=0;i<books.length;i++){
+    if(books[i].id===id){
+        books.splice(i,1);
+        res.status(204);
+        res.send();
+    }else{
+        res.status(404);
+        res.send('Not found');
+    }
+}
+};
+
 module.exports={
     get,
     post,
     getById,
+    remove,
 };

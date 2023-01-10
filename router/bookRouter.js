@@ -6,7 +6,7 @@ const router=express.Router();
 
 router.get('/',bookCtrl.get);
 router.get('/:id',bookCtrl.getById);
-
+router.delete('/:id',bookCtrl.remove);
 router.post('/',bookCtrl.post);
 
 module.exports = router;
