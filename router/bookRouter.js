@@ -4,6 +4,7 @@ const bookCtrl=require('../controller/bookCtrl')
 const router=express.Router();
 
 
-router.get('/',bookCtrl.get)
+router.get('/',bookCtrl.get);
+router.post('/',bookCtrl.post);
 
 module.exports = router;

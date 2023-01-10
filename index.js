@@ -1,4 +1,5 @@
 const express = require('express');
+const bodyParser=require('body-parser');
 
 
 const homeRouter=require('./router/homeRouter');
@@ -8,6 +9,7 @@ const app= express();
 const PORT= 3000;
 
 app.listen(PORT,()=>console.log(`server is running on the PORT ${PORT}`));
+app.use(bodyParser.json());
 
 app.use('/',homeRouter)
 
