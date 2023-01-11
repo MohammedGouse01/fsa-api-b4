@@ -5,8 +5,10 @@ const router=express.Router();
 
 
 router.get('/',bookCtrl.get);
+router.post('/',bookCtrl.post);
 router.get('/:id',bookCtrl.getById);
 router.delete('/:id',bookCtrl.remove);
-router.post('/',bookCtrl.post);
+router.put('/:id',bookCtrl.put);
+router.patch('/:id',bookCtrl.patch);
 
 module.exports = router;
