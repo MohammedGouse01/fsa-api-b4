@@ -3,6 +3,7 @@ const productRepository= require('../repositories/productRepository');
 
 class ProductCtrl{
     async get(req,res){
+        
         //db.products.find()
         const data= await productRepository.get();
             res.status(200);
@@ -19,6 +20,19 @@ class ProductCtrl{
             res.send('Internal Server Error');
         }
     }
+
+    async getById(req,res){
+        try{
+            const id= req.params.id;
+            const data = await productRepository.getById(id);
+            res.status(200);
+            res.send(data);
+        }catch(err){
+            res.status(500);
+            res.send('Internal Server Error');
+        }
+    }
+    
 };
 
 module.exports = new ProductCtrl();

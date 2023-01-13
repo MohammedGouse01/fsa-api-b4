@@ -9,7 +9,14 @@ const save =(data)=>{
     return Product.save();
 }
 
+const getById= (id)=>{
+    return productModel.find({
+        _id:id
+    })
+}
+
 module.exports= {
     get,
     save,
+    getById,
 }
